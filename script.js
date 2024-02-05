@@ -6,7 +6,13 @@ Vypište do stránky i příjem divadla se započítanou slevou pro studenty.
 
 let cenaListku = 12
 let hraNavstevnici = 174
+let hraBezStudentu = 104.4
 let hraMesic = 15
 let prijem = (cenaListku * hraNavstevnici) * hraMesic
+let studentCena = (cenaListku / 100) * 65
+let studentiNavstevnici = (hraNavstevnici / 100) * 40
+let prijemStudent = (studentCena * studentiNavstevnici) * hraMesic
+let prijemNovy = Math.floor((cenaListku * hraBezStudentu * hraMesic) + prijemStudent)
 
-document.body.innerHTML = prijem
+console.log("Měsíční příjem divadla je " + prijem + " euro.")
+console.log("Potom, co divadlo zavedlo studenské slevy se příjem změnil na " + prijemNovy + " euro. To je o " + prijem % prijemNovy + " euro méně.")
